@@ -17,4 +17,4 @@ jobs:
             docker push $DOCKER_REGISTRY/simple-golang-image:latest
       - run:
           name: Docker run
-          command: docker run simple-golang-image
+          command: docker run -p 8080:8080 simple-golang-image
