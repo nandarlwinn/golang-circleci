@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  simple-golang:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-06-14T13:52:01.4159538+06:30"
+    description: A Helm chart for Kubernetes
+    digest: 8a1a57cf82c15b826d779b2ed16e0f3b63db1ac9aba9a56f03161f34054da719
+    name: simple-golang
+    type: application
+    urls:
+    - https://github.com/nandarlwinn/golang-circleci/simple-golang-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-06-14T13:52:01.415319+06:30"
