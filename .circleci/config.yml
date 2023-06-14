@@ -1,0 +1,20 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.16
+    steps:
+      - checkout
+      - run:
+          name: Go build
+          command: go build -o simple-golang
+      - run:
+          name: Docker build and push
+          command: |
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+            docker build -t simple-golang-image .
+            docker tag simple-golang-image $DOCKER_REGISTRY/simple-golang-image:latest
+            docker push $DOCKER_REGISTRY/simple-golang-image:latest
+      - run:
+          name: Docker run
+          command: docker run simple-golang-image
