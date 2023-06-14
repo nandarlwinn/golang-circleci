@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Go build
-          command: go build -o simple-golang
+          command: CGO_ENABLED=0 GOOS=linux go build -o simple-golang
       - run:
           name: Docker build and push
           command: |
